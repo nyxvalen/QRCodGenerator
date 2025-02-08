@@ -10,7 +10,7 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background: linear-gradient(to bottom, #08FF8D, #0FE8D5);
+            background: linear-gradient(to bottom, #08ff8d, #0fe8d5);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -23,13 +23,22 @@
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+        }
+        .logo {
+            margin-bottom: 20px;
+        }
+        .logo img {
+            max-width: 100%;
+            height: auto;
         }
         h2 {
             margin-bottom: 20px;
         }
         input {
             padding: 10px;
-            width: 300px;
+            width: calc(100% - 22px);
             border: 1px solid #ccc;
             border-radius: 5px;
             margin-bottom: 10px;
@@ -53,6 +62,9 @@
 </head>
 <body>
     <div class="container">
+        <div class="logo">
+            <img src="logo.png" alt="Logo QR Code Generator">
+        </div>
         <h2>QR Code Generator</h2>
         <input type="text" id="text" placeholder="Masukkan link atau teks" value="https://joesphoto.id/">
         <button onclick="generateQR()">Generate QR Code</button>
@@ -66,7 +78,7 @@
         function generateQR() {
             var text = document.getElementById("text").value;
             if (!text) {
-                alert("Harap masukkan link atau teks!");
+                alert("Harap masukkan teks atau URL!");
                 return;
             }
             document.getElementById("qrcode").innerHTML = ""; // Reset QR code
@@ -76,7 +88,6 @@
                 height: 200,
                 correctLevel: QRCode.CorrectLevel.H
             });
-            alert("QR Code berhasil dibuat!");
         }
         
         function downloadQR() {
@@ -89,7 +100,6 @@
             link.href = qrCanvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
             link.download = "qrcode_hd.png";
             link.click();
-            alert("QR Code berhasil diunduh!");
         }
     </script>
 
