@@ -10,7 +10,7 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background: linear-gradient(to bottom, #26A69A, #80CBC4);
+            background: linear-gradient(to bottom, #08FF8D, #0FE8D5);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -65,6 +65,10 @@
         var qr;
         function generateQR() {
             var text = document.getElementById("text").value;
+            if (!text) {
+                alert("Harap masukkan link atau teks!");
+                return;
+            }
             document.getElementById("qrcode").innerHTML = ""; // Reset QR code
             qr = new QRCode(document.getElementById("qrcode"), {
                 text: text,
@@ -72,6 +76,7 @@
                 height: 200,
                 correctLevel: QRCode.CorrectLevel.H
             });
+            alert("QR Code berhasil dibuat!");
         }
         
         function downloadQR() {
@@ -84,6 +89,7 @@
             link.href = qrCanvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
             link.download = "qrcode_hd.png";
             link.click();
+            alert("QR Code berhasil diunduh!");
         }
     </script>
 
