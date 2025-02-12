@@ -11,16 +11,15 @@
   },
   "action": {
     "default_popup": "index.html",
-    "default_icon": {
-      "16": "icon/icon-16x16.png",
-      "48": "icon/icon-48x48.png",
-      "128": "icon/icon-128x128.png"
-    }
+    "default_icon": "icon/icon-48x48.png"
   },
   "background": {
     "service_worker": "service-worker.js"
   },
   "permissions": [
     "activeTab"
+  ],
+  "host_permissions": [
+    "<all_urls>"
   ]
 }
