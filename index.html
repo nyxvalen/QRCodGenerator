@@ -6,6 +6,7 @@
     <title>QR Code Generator</title>
     <link rel="manifest" href="manifest.json" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <link rel="stylesheet" href="style.css">
     <style>
         body {
             margin: 0;
@@ -25,6 +26,7 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             width: 100%;
             max-width: 400px;
+            box-sizing: border-box;
         }
         .logo {
             margin-bottom: 20px;
@@ -40,7 +42,7 @@
             padding: 10px;
             width: calc(100% - 22px);
             border: 1px solid #ccc;
-            border-radius: 5px;
+            border-radius: 24px; /* Sudut membulat 24px */
             margin-bottom: 10px;
         }
         button {
@@ -66,7 +68,7 @@
             <img src="logo.png" alt="Logo QR Code Generator">
         </div>
         <h2>QR Code Generator</h2>
-        <input type="text" id="text" placeholder="Masukkan link atau teks" value="https://joesphoto.id/">
+        <input type="text" id="textInput" placeholder="Masukkan link atau teks" value="https://joesphoto.id/">
         <button onclick="generateQR()">Generate QR Code</button>
         <button onclick="downloadQR()">Download QR Code</button>
         <br>
@@ -76,7 +78,7 @@
     <script>
         var qr;
         function generateQR() {
-            var text = document.getElementById("text").value;
+            var text = document.getElementById("textInput").value;
             if (!text) {
                 alert("Harap masukkan teks atau URL!");
                 return;
@@ -103,7 +105,6 @@
         }
     </script>
 
-    <!-- Register Service Worker -->
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', function() {
