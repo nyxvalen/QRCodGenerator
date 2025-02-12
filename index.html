@@ -32,7 +32,7 @@
             margin-bottom: 20px;
         }
         .logo img {
-            max-width: 100%;
+            max-width: 50%;
             height: auto;
         }
         h2 {
@@ -86,8 +86,8 @@
             document.getElementById("qrcode").innerHTML = ""; // Reset QR code
             qr = new QRCode(document.getElementById("qrcode"), {
                 text: text,
-                width: 200,
-                height: 200,
+                width: 600,
+                height: 600,
                 correctLevel: QRCode.CorrectLevel.H
             });
         }
