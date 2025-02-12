@@ -3,8 +3,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 320px;
-  height: 480px;
+  width: 100vw;
+  height: 100vh;
   margin: 0;
   background-color: #f0f0f0;
   overflow: hidden;
@@ -45,7 +45,7 @@ button:hover {
   background-color: #0056b3;
 }
 
-#qrCode {
+#qrcode {
   margin-top: 20px;
   display: flex;
   justify-content: center;
@@ -53,7 +53,7 @@ button:hover {
   max-width: 100%;
 }
 
-#qrCode img {
+#qrcode img {
   max-width: 100%;
   height: auto;
   display: block;
