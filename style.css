@@ -20,7 +20,7 @@ h1 {
 }
 
 .logo h2 {
-  margin: 10px 0; /* Gaya untuk tulisan "nyxvalen" */
+  margin: 10px 0;
 }
 
 input {
@@ -40,7 +40,7 @@ button {
   color: black;
   border: 1px solid #ccc;
   cursor: pointer;
-  margin: 0 10px; /* Tambahkan margin horizontal (kanan dan kiri) */
+  margin: 0 10px;
 }
 
 button:hover {
