@@ -7,6 +7,58 @@
     <link rel="manifest" href="manifest.json" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+            background-color: black;
+            color: white; 
+        }
+
+        h1 {
+            margin: 20px 0;
+        }
+
+        .logo img {
+            max-width: 50%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        input {
+            padding: 15px;
+            width: 80%;
+            margin-bottom: 20px;
+            border-radius: 24px;
+            background-color: white;
+            color: black;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px 20px;
+            border-radius: 24px;
+            background-color: white;
+            color: black;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #f0f0f0;
+            color: black;
+        }
+
+        #qrcode {
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
     <div class="logo">
@@ -15,8 +67,42 @@
     <h1>QR Code Generator</h1>
     <input type="text" id="textInput" placeholder="Masukkan link atau teks" value="https://joesphoto.id/">
     <button onclick="generateQR()">Generate QR Code</button>
+    <button onclick="downloadQR()">Download QR Code</button>
     <div id="qrcode"></div>
 
-    <script src="script.js"></script>
+    <script>
+        function generateQR() {
+            const text = document.getElementById('textInput').value;
+            const qrCodeContainer = document.getElementById('qrcode');
+
+            qrCodeContainer.innerHTML = ""; // Hapus QR code sebelumnya
+
+            if (!text) {
+                alert('Masukkan teks atau URL!');
+                return;
+            }
+
+            new QRCode(qrCodeContainer, {
+                text: text,
+                width: 300,
+                height: 300,
+                colorDark: "#000000",
+                colorLight: "#ffffff",
+                correctLevel: QRCode.CorrectLevel.H
+            });
+        }
+
+        function downloadQR() {
+            const qrCanvas = document.querySelector("#qrcode canvas");
+            if (!qrCanvas) {
+                alert("Harap generate QR Code terlebih dahulu!");
+                return;
+            }
+            const link = document.createElement("a");
+            link.href = qrCanvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+            link.download = "qrcode_hd.png";
+            link.click();
+        }
+    </script>
 </body>
 </html>
