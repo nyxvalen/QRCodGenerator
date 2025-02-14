@@ -1,12 +1,11 @@
-service-worker.js
 self.addEventListener('install', function(event) {
     event.waitUntil(
         caches.open('q-cache').then(function(cache) {
             return cache.addAll([
                 './index.html',
                 './manifest.json',
-                './icon-192x192.png',
-                './icon-512x512.png',
+                './icon/icon-192x192.png',
+                './icon/icon-512x512.png',
                 './qrcode.min.js'
             ]);
         })
