@@ -33,6 +33,12 @@ input {
   border: 1px solid #ccc;
 }
 
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
 button {
   padding: 10px 20px;
   border-radius: 24px;
