@@ -12,6 +12,12 @@ body {
 }
 
 h1 {
+  margin: 20px 0;
+}
+
+.logo img {
+  max-width: 50%;
+  height: auto;
   margin-bottom: 20px;
 }
 
