@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QR Code Generator</title>
-    <link rel="manifest" href="manifest.json" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-    <link rel="stylesheet" href="style.css">
     <style>
         body {
             margin: 0;
@@ -19,15 +17,14 @@
             background-color: black;
             color: white; 
         }
+        h1 {
+            margin: 20px 0;
+        }
         .logo {
-            margin-bottom: 20px;
             text-align: center;
         }
         .logo h2 {
             margin: 10px 0;
-        }
-        h1 {
-            margin: 20px 0;
         }
         input {
             padding: 15px;
@@ -38,6 +35,11 @@
             color: black;
             border: 1px solid #ccc;
         }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
         button {
             padding: 10px 20px;
             border-radius: 24px;
@@ -45,6 +47,7 @@
             color: black;
             border: 1px solid #ccc;
             cursor: pointer;
+            margin: 0 10px; /* Jarak horizontal antara tombol */
         }
         button:hover {
             background-color: #f0f0f0;
@@ -56,12 +59,14 @@
 </head>
 <body>
     <div class="logo">
-        <h2>nyxvalen</h2> <!-- Hanya elemen teks "nyxvalen" -->
+        <h2>nyxvalen</h2>
     </div>
     <h1>QR Code Generator</h1>
     <input type="text" id="textInput" placeholder="Masukkan link atau teks" value="https://joesphoto.id/">
-    <button onclick="generateQR()">Generate QR Code</button>
-    <button onclick="downloadQR()">Download QR Code</button>
+    <div class="button-container">
+        <button onclick="generateQR()">Generate QR Code</button>
+        <button onclick="downloadQR()">Download QR Code</button>
+    </div>
     <div id="qrcode"></div>
 
     <script>
