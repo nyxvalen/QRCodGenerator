@@ -19,14 +19,8 @@ h1 {
   text-align: center;
 }
 
-.logo img {
-  max-width: 50%;
-  height: auto;
-  margin-bottom: 10px;
-}
-
 .logo h2 {
-  margin: 10px 0;
+  margin: 10px 0; /* Gaya untuk tulisan "nyxvalen" */
 }
 
 input {
