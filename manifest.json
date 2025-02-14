@@ -22,5 +22,13 @@
   },
   "permissions": [
     "activeTab"
-  ]
+  ],
+  "theme": {
+    "colors": {
+      "frame": "#000000",
+      "toolbar": "#000000",
+      "background_tab": "#000000",
+      "text": "#FFFFFF"
+    }
+  }
 }
