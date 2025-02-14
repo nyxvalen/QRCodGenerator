@@ -16,6 +16,8 @@
             height: 100vh;
             background-color: black;
             color: white; 
+            position: relative; /* Tambahkan ini */
+            overflow: hidden; /* Tambahkan ini */
         }
         h1 {
             margin: 20px 0;
@@ -55,9 +57,22 @@
         #qrcode {
             margin-top: 20px;
         }
+        video {
+            position: absolute; /* Tambahkan ini */
+            top: 0; /* Tambahkan ini */
+            left: 0; /* Tambahkan ini */
+            width: 100%; /* Tambahkan ini */
+            height: 100%; /* Tambahkan ini */
+            object-fit: cover; /* Tambahkan ini */
+            z-index: -1; /* Tambahkan ini */
+        }
     </style>
 </head>
 <body>
+    <video autoplay loop muted>
+        <source src="Topographic Textures | After Effects | Topographic D.mp4" type="video/mp4"> <!-- Ganti dengan nama file video Anda -->
+        Your browser does not support the video tag.
+    </video>
     <div class="logo">
         <h2>nyxvalen</h2>
     </div>
